@@ -14,7 +14,7 @@
             containerRelativeFrame(.vertical, count: 3, spacing: 16)
           ">
             <NavigationLink
-              destination="<%= "/news/#{article.id}" %>"}
+              destination="<%= "/news/#{article.id}" %>"
                 style="
                   buttonStyle(.plain)
                   "
@@ -30,24 +30,26 @@
                   shadow(radius: 5);
                   padding(.horizontal)
                 ">
-                    <.image url="<%= article.image_url %>" style="
-                      frame(height: 228);
-                      overlay(Color.black.opacity(0.35))
-                    ">
-                      <:success style="
-                        resizable();
-                        scaledToFill();
-                      "/>
-                      <:failure>
-                        <Color name="system-gray"/>
-                      </:failure>
-                      <:empty>
-                        <ZStack>
-                          <Color name="system-gray" style="opacity(0.2)"/>
-                          <ProgressView/>
-                        </ZStack>
-                      </:empty>
-                    </.image>
+                    <AsyncImage url="<%= article.image_url %>" style="
+                        frame(height: 228);
+                        overlay(Color.black.opacity(0.35))
+                      ">
+                        <Group template="phase.empty">
+    
+                          <ZStack>
+                            <Color name="system-gray" style="opacity(0.2)"></Color>
+                            <ProgressView></ProgressView>
+                          </ZStack>
+                        
+                        </Group>
+                        <AsyncImage image template="phase.success" class="" style="
+                          resizable();
+                          scaledToFill();
+                          "></AsyncImage>
+                        <Group template="phase.failure">
+                          <Color name="system-gray"></Color>
+                        </Group>
+                    </AsyncImage>
                     <Text style="
                       font(.headline);
                       foregroundStyle(.white);

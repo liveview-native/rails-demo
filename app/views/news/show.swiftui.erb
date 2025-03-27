@@ -14,23 +14,25 @@
       clipped();
       ">
       <%= @article.title %>
-      <.image url="<%= @article.image_url %>" template="background" style='
+      <AsyncImage url="https://images.unsplash.com/photo-1581090700227-1e37b190418e" template="background" style="
         overlay(Color.black.opacity(0.3));
-        '>
-        <:success style="
+        ">
+        <Group template="phase.empty">
+    
+          <ZStack>
+            <Color name="system-gray" style="opacity(0.2)"></Color>
+            <ProgressView></ProgressView>
+          </ZStack>
+        
+        </Group>
+        <AsyncImage image template="phase.success" class="" style="
           resizable();
           scaledToFill();
-          "/>
-        <:failure>
-          <Color name="system-gray"/>
-        </:failure>
-        <:empty>
-          <ZStack>
-            <Color name="system-gray" style="opacity(0.2)"/>
-            <ProgressView/>
-          </ZStack>
-        </:empty>
-      </.image>
+          "></AsyncImage>
+        <Group template="phase.failure">
+          <Color name="system-gray"></Color>
+        </Group>
+      </AsyncImage>
     </Text>
     <Text style="
       font(.body);
