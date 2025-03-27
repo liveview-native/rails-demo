@@ -1,0 +1,68 @@
+<ScrollView style="
+    scrollTargetBehavior(.viewAligned(limitBehavior: .alwaysByOne));
+    scrollPosition(anchor: .center);
+  "
+>
+    <LazyVStack style="
+        scrollTargetLayout()
+    ">
+        <% @news.each do |article| %>
+          <Group style="
+            opacity(1);
+            rotation3DEffect(.degrees(0), axis: [x: 1, y: 0, z: 0]);
+            scaleEffect(1);
+            containerRelativeFrame(.vertical, count: 3, spacing: 16)
+          ">
+            <NavigationLink
+              destination="<%= "/news/#{article.id}" %>"}
+                style="
+                  buttonStyle(.plain)
+                  "
+            >
+              <Group article="<%= article.id %>" template="destination" style='
+                navigationTransition(.zoom(sourceID: attr("article"), in: :animationNamespace))
+              '/>
+              <Group article="<%= article.id %>" style='
+                matchedTransitionSource(id: attr("article"), in: :animationNamespace)
+              '>
+                <ZStack alignment="top" style="
+                  clipShape(.rect(cornerRadius: 15));
+                  shadow(radius: 5);
+                  padding(.horizontal)
+                ">
+                    <.image url="<%= article.image_url %>" style="
+                      frame(height: 228);
+                      overlay(Color.black.opacity(0.35))
+                    ">
+                      <:success style="
+                        resizable();
+                        scaledToFill();
+                      "/>
+                      <:failure>
+                        <Color name="system-gray"/>
+                      </:failure>
+                      <:empty>
+                        <ZStack>
+                          <Color name="system-gray" style="opacity(0.2)"/>
+                          <ProgressView/>
+                        </ZStack>
+                      </:empty>
+                    </.image>
+                    <Text style="
+                      font(.headline);
+                      foregroundStyle(.white);
+                      shadow(radius: 3);
+                      multilineTextAlignment(.center);
+                      padding(.top)
+                    "><%= article.title %></Text>
+                </ZStack>
+              </Group>
+            </NavigationLink>
+          </Group>
+
+        <% end %>
+
+        <!-- Additional ArticleLinks similarly formatted -->
+    </LazyVStack>
+</ScrollView>
+

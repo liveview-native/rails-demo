@@ -1,10 +1,22 @@
-class SwiftuiController < ApplicationController
+class NewsController < ApplicationController
   Mime::Type.register "application/swiftui", :swiftui
 
   def index
+    @news = News.all
+
     respond_to do |format|
       format.swiftui do
-        render template: "swiftui/index"
+        render template: "news/index"
+      end
+    end
+  end
+
+  def show
+    @article = News.find(params[:id])
+
+    respond_to do |format|
+      format.swiftui do
+        render template: "news/show"
       end
     end
   end
