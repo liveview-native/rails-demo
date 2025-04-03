@@ -14,7 +14,7 @@
       clipped();
       ">
       <%= @article.title %>
-      <AsyncImage url="https://images.unsplash.com/photo-1581090700227-1e37b190418e" template="background" style="
+      <AsyncImage url="<%= @article.image_url %>" template="background" style="
         overlay(Color.black.opacity(0.3));
         ">
         <Group template="phase.empty">
