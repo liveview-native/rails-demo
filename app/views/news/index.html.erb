@@ -1,0 +1,10 @@
+<div class="news-feed">
+  <% @news.each do |article| %>
+    <a href="/news/<%= article.id %>">
+      <div class="news-card">
+        <img src="<%= article.image_url %>" alt="<%= article.title %>">
+        <div class="news-title"><%= article.title %></div>
+      </div>
+    </a>
+  <% end %>
+</div>

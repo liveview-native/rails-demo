@@ -1,0 +1,9 @@
+<div class="article-container">
+  <div class="article-image">
+    <img src="<%= @article.image_url %>" alt="<%= @article.title %>">
+    <div class="article-title"><%= @article.title %></div>
+  </div>
+  <div class="article-body">
+    <%= @article.body.html_safe %>
+  </div>
+</div>

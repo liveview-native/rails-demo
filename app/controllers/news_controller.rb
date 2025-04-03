@@ -1,13 +1,10 @@
 class NewsController < ApplicationController
-  Mime::Type.register "application/swiftui", :swiftui
-
   def index
     @news = News.all
 
     respond_to do |format|
-      format.swiftui do
-        render template: "news/index"
-      end
+      format.html
+      format.swiftui
     end
   end
 
@@ -15,17 +12,8 @@ class NewsController < ApplicationController
     @article = News.find(params[:id])
 
     respond_to do |format|
-      format.swiftui do
-        render template: "news/show"
-      end
-    end
-  end
-  
-  private
-  
-  def check_format
-    if request.headers["Accept"]&.include?("application/swiftui")
-      request.format = :swiftui
+      format.html
+      format.swiftui
     end
   end
 end
