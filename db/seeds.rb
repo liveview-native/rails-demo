@@ -18,7 +18,7 @@ articles = [
 
       Observers remain cautious but optimistic, noting careful implementation is key to sustained peace.
     BODY
-    image_url: "https://images.unsplash.com/photo-1517816428104-797678c7cf53"
+    image_url: "https://images.unsplash.com/photo-1679909156798-78aab92b3ba8?w=1280"
   },
   {
     title: "NASA Plans Moon Settlement by 2035",
@@ -29,7 +29,7 @@ articles = [
 
       International space agencies will collaborate, leveraging global expertise and technology.
     BODY
-    image_url: "https://images.unsplash.com/photo-1541873676-a18131494184"
+    image_url: "https://images.unsplash.com/photo-1541873676-a18131494184?w=1280"
   },
   {
     title: "Major Cyberattack on Logistics Firm",
@@ -40,7 +40,7 @@ articles = [
 
       Authorities and cybersecurity experts are urgently working to restore full operational capabilities.
     BODY
-    image_url: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a"
+    image_url: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=1280"
   },
   {
     title: "Renewable Energy Surpasses Coal Globally",
@@ -51,7 +51,7 @@ articles = [
 
       Environmental advocates celebrate this milestone as critical progress in combating climate change.
     BODY
-    image_url: "https://images.unsplash.com/photo-1509391366360-2e959784a276"
+    image_url: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1280"
   },
   {
     title: "Alzheimer’s Research Breakthrough Announced",
@@ -62,7 +62,7 @@ articles = [
 
       Medical professionals cautiously welcome these results, pending further extensive studies.
     BODY
-    image_url: "https://images.unsplash.com/photo-1611690828081-878ab5e8ca9d"
+    image_url: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1280"
   },
   {
     title: "Innovative AI System Beats Human Champions",
@@ -73,7 +73,7 @@ articles = [
 
       Ethical considerations around the rapid advancement of AI technology have sparked renewed debate.
     BODY
-    image_url: "https://images.unsplash.com/photo-1581090700227-1e37b190418e"
+    image_url: "https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=1280"
   },
   {
     title: "Global Effort Significantly Reduces Ocean Plastic",
@@ -84,7 +84,7 @@ articles = [
 
       Scientists highlight the measurable positive impact on marine life recovery.
     BODY
-    image_url: "https://images.unsplash.com/photo-1575311373942-8d8db4c763dc"
+    image_url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1280"
   },
   {
     title: "Breakthrough Cancer Vaccine Shows Promise",
@@ -95,7 +95,7 @@ articles = [
 
       Oncologists express cautious optimism, calling for accelerated testing and regulatory reviews.
     BODY
-    image_url: "https://images.unsplash.com/photo-1576085898323-218337e3e43d"
+    image_url: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=1280"
   },
   {
     title: "Electric Vehicles Hit Record Sales Worldwide",
@@ -106,7 +106,7 @@ articles = [
 
       Infrastructure developments, such as rapid charging networks, have supported widespread adoption.
     BODY
-    image_url: "https://images.unsplash.com/photo-1609252925148-b0d5b1a1c8a2"
+    image_url: "https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?w=1280"
   },
   {
     title: "Discovery of Earth-like Planet Excites Astronomers",
@@ -117,7 +117,7 @@ articles = [
 
       Further detailed studies are planned, leveraging powerful telescopes and international collaboration.
     BODY
-    image_url: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa"
+    image_url: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1280"
   }
 ].each do |article|
   News.create!(article)
